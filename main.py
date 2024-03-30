@@ -1,8 +1,23 @@
 
+"""
+Web Scraper for Persian Crypto Currency Purpose
+Start : Mar 18, 2024
+Version : V0.1
+"""
+# 
+# Import essential modules:
 import requests
 from bs4 import BeautifulSoup
-from wb_beautifulsoup import wb_beautifulsoup
-from wb_helium import wb_helium
+from wb_beautifulsoup import wb_beautifulsoup  #import this library for prices that load by HTML
+from wb_helium import wb_helium #import this library for prices that load by JavaScript
+# Websites:
+# {
+#     1-https://bitbarg.com/coin/tether
+#     2-https://tabdeal.org/buy-usdt
+#     3-https://wallex.ir/markets/usdt
+#     4-https://nobitex.ir/usdt/
+# }
+
 price_1 = wb_beautifulsoup('https://bitbarg.com/coin/tether','span',7)
 price_1.get_tether_price()
 
@@ -19,7 +34,7 @@ print("The tether price on "+price_1.url+" is "+price_1.price+"")
 print("The tether price on "+price_2.url+" is "+price_2.price.strip()[14:]+"")
 print("The tether price on "+price_2.url+" is "+price_3.price+"")
 print("The tether price on "+price_4.url+" is "+price_4.price+"")
-# print(price[0].text.strip())
+
 
 
 
